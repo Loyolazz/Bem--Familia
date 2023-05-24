@@ -37,6 +37,28 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>fonts/IstokWeb-Bold</string>
+		<string>fonts/AntDesign</string>
+		<string>fonts/Entypo</string>
+		<string>fonts/EvilIcons</string>
+		<string>fonts/Feather</string>
+		<string>fonts/FontAwesome</string>
+		<string>fonts/FontAwesome5_Brands</string>
+		<string>fonts/FontAwesome5_Regular</string>
+		<string>fonts/FontAwesome5_Solid</string>
+		<string>fonts/Fontisto</string>
+		<string>fonts/Foundation</string>
+		<string>fonts/Heavitas</string>
+		<string>fonts/Ionicons</string>
+		<string>fonts/IstokWeb-Bold</string>
+		<string>fonts/MaterialCommunityIcons</string>
+		<string>fonts/MaterialIcons</string>
+		<string>fonts/Octicons</string>
+		<string>fonts/SimpleLineIcons</string>
+		<string>fonts/Zocial</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
