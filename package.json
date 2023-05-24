@@ -1,6 +1,6 @@
 {
-  "name": "BemFamilia",
-  "version": "0.0.1",
+  "name": "Bem Familia",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -40,8 +40,7 @@
     "react-native-video": "^5.2.1",
     "react-native-video-controls": "^2.8.1",
     "react-native-webview": "^11.26.1",
-    "react-navigation": "^4.4.4",
-    "rive-react-native": "^3.0.41"
+    "react-navigation": "^4.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
