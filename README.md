@@ -38,4 +38,4 @@ Para executar o projeto no iOS, siga as etapas abaixo:
 
 6. Agora você pode executar o projeto iOS usando o comando `npx react-native run-ios`.
 
-Powered by V3L0z
+## Powered by V3L0z
