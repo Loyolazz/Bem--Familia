@@ -20,7 +20,7 @@ export default function Stack({ }) {
       <Screen name="Search" component={Search} />
       <Screen name="SplashLoading" component={SplashLoading} />
       <Screen name="Services" component={Services} />
-      <Screen name="Category" component={Category} />
+      <Screen name="Category" component={Category} options={{animation:"none"}} />
       <Screen name="Video" component={PlayerVideo} options={{animation:"none"}} />
       <Screen name="Faq" component={Faq} />
       <Screen name="CatSelect" component={CatSelect} />

@@ -42,12 +42,7 @@ const AdminStack = () => {
                     headerTransparent: true,
                     title: '',
                 }}
-
             />
-
-
-
-
         </Stack.Navigator>
     );
 };

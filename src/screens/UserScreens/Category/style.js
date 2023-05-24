@@ -88,11 +88,24 @@ const style = StyleSheet.create({
     paddingBottom: 10,
     fontFamily: 'IstokWeb-Bold',
   },
+  categoryCardsBox:{
+    flexDirection: 'row', 
+    paddingLeft: 4,
+    marginBottom: 2,
+    paddingTop: 10,
+    bottom: 35,
+  },
+  categoryCardsBoxVideo:{
+    paddingLeft: 10,
+    paddingTop: 10,
+    bottom: 55,
+  },
   textG: {
     color: '#093D73',
     fontSize: 17,
     fontFamily: 'IstokWeb-Bold',
   },
+  
 });
 
 export default style;

@@ -17,7 +17,7 @@ const AuthStack = () => {
       initialRouteName="Splash"
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="Splash" component={Splash} />
-      <Stack.Screen name="Presentation" component={Presentation} />
+      <Stack.Screen name="Presentation" component={Presentation} options={{animation:"none" }} />
       <Stack.Screen
         name="Login"
         component={Login}
@@ -27,7 +27,7 @@ const AuthStack = () => {
           title: '',
         }}
       />
-      <Stack.Screen name="InitialScreen" component={InitialScreen} />
+      <Stack.Screen name="InitialScreen" component={InitialScreen} options={{animation:"none" }} />
       <Stack.Screen
         name="Registration"
         component={Registration}

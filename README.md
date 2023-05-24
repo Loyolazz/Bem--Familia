@@ -30,12 +30,14 @@ Para executar o projeto no iOS, siga as etapas abaixo:
 
 2. Execute o comando `bundle install` para instalar as dependências do Ruby.
 
-3. Navegue até o diretório `ios` usando o terminal.
+3. Execute o comando `npm install --force` para instalar as dependências do projeto.
 
-4. Execute o comando `pod install` para instalar as dependências do CocoaPods.
+4. Navegue até o diretório `ios` usando o terminal.
 
-5. Retorne ao diretório raiz do projeto executando `cd ..`.
+5. Execute o comando `pod install` para instalar as dependências do CocoaPods.
 
-6. Agora você pode executar o projeto iOS usando o comando `npx react-native run-ios`.
+6. Retorne ao diretório raiz do projeto executando `cd ..`.
+
+7. Agora você pode executar o projeto iOS usando o comando `npx react-native run-ios`.
 
 ## Powered by V3L0z
