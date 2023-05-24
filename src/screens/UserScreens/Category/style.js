@@ -22,18 +22,21 @@ const style = StyleSheet.create({
   header: {
     width: '100%',
     height: '25%',
-    alignItems: 'flex-end',
+    alignItems: 'center',
     justifyContent: 'center'
   },
   image: {
-    width: 163,
-    height: 88,
+    width: '70%',
+    height: '60%',
     margin: 40
   },
   contentTitle: {
     width: '100%',
     height: '10%',
-    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
   },
   contentList: {
     flex: 1,
@@ -46,7 +49,6 @@ const style = StyleSheet.create({
   title: {
     fontSize: 20,
     color: "#000000",
-    marginLeft: 30,
     fontFamily: 'IstokWeb-Bold'
   },
   icon: {
@@ -87,7 +89,7 @@ const style = StyleSheet.create({
     fontFamily: 'IstokWeb-Bold',
   },
   textG: {
-    color: '#FF6B00',
+    color: '#093D73',
     fontSize: 17,
     fontFamily: 'IstokWeb-Bold',
   },

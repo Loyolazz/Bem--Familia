@@ -12,7 +12,7 @@ const FavoriteButton = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://144.22.215.111/favoritos`, {
+        const response = await axios.get(`http://144.22.182.223/favoritos`, {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
@@ -40,7 +40,7 @@ const FavoriteButton = (props) => {
   const toggleFavorite = async () => {
     try {
       if (isFavorited) {
-        await axios.delete(`http://144.22.215.111/favoritos/${props.id}`, {
+        await axios.delete(`http://144.22.182.223/favoritos/${props.id}`, {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
@@ -51,7 +51,7 @@ const FavoriteButton = (props) => {
       }
 
       if (!isFavorited) {
-        await axios.post(`http://144.22.215.111/favoritos/${props.id}`, {}, {
+        await axios.post(`http://144.22.182.223/favoritos/${props.id}`, {}, {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',

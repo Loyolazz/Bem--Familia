@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         height: 35,
         alignItems: 'center',
         justifyContent: 'space-between',
-        backgroundColor: '#FF7410',
+        backgroundColor: '#093D73',
         flexDirection: 'row',
         borderRadius: 10
     },

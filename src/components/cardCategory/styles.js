@@ -45,6 +45,18 @@ const styles = StyleSheet.create({
     marginLeft: -25,
     marginTop: -25,
   },
+  avaliacao: {
+    bottom: CARD_HEIGHT / 4,
+    left: CARD_WIDTH / 1,
+    marginLeft: -55,
+    marginTop: -25,
+    flexDirection: 'row',
+    width: 50,
+    backgroundColor: '#005B96 ',
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 });
 
 export default styles

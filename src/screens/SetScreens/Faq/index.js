@@ -89,20 +89,20 @@ export default function Faq({ navigation }) {
   //
   return (
     <SafeAreaView style={style.container}>
-      <LinearGradient colors={['#dc462d', '#eb7c2d']} style={style.header}>
+      <LinearGradient colors={['#005B96', '#093D73']} style={style.header}>
         <Image style={style.image} source={Logo} resizeMode="contain" />
       </LinearGradient>
       <View style={style.contentTitle}>
         <Text style={style.subtitle}>Saiba mais sobre</Text>
         <Text style={style.title}>O Bem Família</Text>
         <Text style={style.text}>#Agradecimento a todos os colaboradores</Text>
-        <Line length={320} diamondSize={10} color="#E6652E"/>
+        <Line length={320} diamondSize={10} color="#093D73"/>
         </View>
         <ScrollView>     
         {faqList.map(faq => renderFaqItem(faq))}
         </ScrollView>
         <View style={style.contentAuthor}>
-        <Line diamondSize={10} length={300} color="#E6652E" />
+        <Line diamondSize={10} length={300} color="#093D73" />
         </View>
       
     </SafeAreaView>

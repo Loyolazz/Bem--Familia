@@ -57,7 +57,8 @@ export default function CatSelect({route, navigation}) {
               posterPath={item.file}
               text={item.titulo}
               loc={item.autor}
-              isNewCARD={true}
+              avaliacao={item.avaliacaoAvg}
+              isSearchCard={true}
             />
           )}
         />

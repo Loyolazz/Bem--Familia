@@ -55,6 +55,7 @@ const Search = ({ navigation }) => {
       posterPath={item.file}
       text={item.titulo}
       loc={item.autor}
+      avaliacao={item.avaliacaoAvg}
       isSearchCard={true}
     />
   );

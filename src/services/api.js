@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const api = axios.create({
-  baseURL: `http://144.22.215.111/`,
+  baseURL: `http://144.22.182.223/`,
 });
 
 export const getVideos = async () => {
@@ -128,7 +128,7 @@ export const deleteVideos = async (categoria_id, video_id, userToken) => {
 export const putPassword = async ( senha, userToken) => {
   try {
     await api.put(`/usuarios`,
-     senha ,
+     {senha} ,
       {
         headers: {
           Authorization: `Bearer ${userToken}`,

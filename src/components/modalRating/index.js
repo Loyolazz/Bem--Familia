@@ -15,7 +15,7 @@ export default function (props) {
 
     const sendRating = async() => {
         try {
-          const response = await axios.post(`http://144.22.215.111/avaliacoes/${props.id}`, {
+          const response = await axios.post(`http://144.22.182.223/avaliacoes/${props.id}`, {
             pontuacao: evaluation
           }, {
             headers: {

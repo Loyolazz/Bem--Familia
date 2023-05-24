@@ -39,25 +39,25 @@
 	<string></string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>fonts/IstokWeb-Bold</string>
-		<string>fonts/AntDesign</string>
-		<string>fonts/Entypo</string>
-		<string>fonts/EvilIcons</string>
-		<string>fonts/Feather</string>
-		<string>fonts/FontAwesome</string>
-		<string>fonts/FontAwesome5_Brands</string>
-		<string>fonts/FontAwesome5_Regular</string>
-		<string>fonts/FontAwesome5_Solid</string>
-		<string>fonts/Fontisto</string>
-		<string>fonts/Foundation</string>
-		<string>fonts/Heavitas</string>
-		<string>fonts/Ionicons</string>
-		<string>fonts/IstokWeb-Bold</string>
-		<string>fonts/MaterialCommunityIcons</string>
-		<string>fonts/MaterialIcons</string>
-		<string>fonts/Octicons</string>
-		<string>fonts/SimpleLineIcons</string>
-		<string>fonts/Zocial</string>
+		<string>fonts/IstokWeb-Bold.ttf</string>
+		<string>fonts/AntDesign.ttf</string>
+		<string>fonts/Entypo.ttf</string>
+		<string>fonts/EvilIcons.ttf</string>
+		<string>fonts/Feather.ttf</string>
+		<string>fonts/FontAwesome.ttf</string>
+		<string>fonts/FontAwesome5_Brands.ttf</string>
+		<string>fonts/FontAwesome5_Regular.ttf</string>
+		<string>fonts/FontAwesome5_Solid.ttf</string>
+		<string>fonts/Fontisto.ttf</string>
+		<string>fonts/Foundation.ttf</string>
+		<string>fonts/Heavitas.ttf</string>
+		<string>fonts/Ionicons.ttf</string>
+		<string>fonts/IstokWeb-Bold.ttf</string>
+		<string>fonts/MaterialCommunityIcons.ttf</string>
+		<string>fonts/MaterialIcons.ttf</string>
+		<string>fonts/Octicons.ttf</string>
+		<string>fonts/SimpleLineIcons.ttf</string>
+		<string>fonts/Zocial.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
     const register = async (nome, email, login, senha, setModalLoading) => {
         setModalLoading(true);
         try {
-            const response = await axios.post(`http://144.22.215.111/cadastro`, {
+            const response = await axios.post(`http://144.22.182.223/cadastro`, {
                 nome,
                 email,
                 login,
@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
             });
             console.log(response.data);
 
-            const authResponse = await axios.post(`http://144.22.215.111/auth`, {
+            const authResponse = await axios.post(`http://144.22.182.223/auth`, {
                 login,
                 senha,
             });
@@ -73,7 +73,7 @@ export const AuthProvider = ({ children }) => {
     const login = async (login, senha, setModalLoading) => {
         setModalLoading(true);
         try {
-            const response = await axios.post(`http://144.22.215.111/auth`, {
+            const response = await axios.post(`http://144.22.182.223/auth`, {
                 login,
                 senha,
             });

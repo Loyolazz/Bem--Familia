@@ -3,13 +3,13 @@ import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './style'
 
-const CardVideo = memo(({ text, posterPath, onPress, loc, isNewCARD, isSearchCard, note }) => {
+const CardVideo = memo(({ text, posterPath, onPress, loc, isNewCARD, isSearchCard, note, avaliacao }) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={[styles.container, isNewCARD && styles.favoriteContainer, isSearchCard && styles.newCardContainer]}>
         <Image
           style={[styles.image, isSearchCard && styles.newCardImage]}
-          source={{ uri: `http://144.22.215.111/uploads/${posterPath}` }}
+          source={{ uri: `http://144.22.182.223/uploads/${posterPath}` }}
         />
         <View style={[styles.detailsContainer, isSearchCard && styles.newCardDetailsContainer]}>
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -21,6 +21,10 @@ const CardVideo = memo(({ text, posterPath, onPress, loc, isNewCARD, isSearchCar
           <View style={styles.locContainer}>
             <Icon name='person-circle-outline' size={25} color='#636363' style={styles.locIcon} />
             <Text style={[styles.textLoc, isNewCARD && styles.favoriteTextLoc, isSearchCard && styles.newCardTextAuthor]}>{loc}</Text>
+            <View style={{flexDirection: 'row', justifyContent: 'center', width: '100%', alignItems: 'center'}}>
+            <Icon name='star' size={20} color='#FFBF00' style={styles.locIcon} />
+            <Text style={[styles.textLoc, isNewCARD && styles.favoriteTextLoc, isSearchCard && styles.newCardTextAuthor]}>{avaliacao}</Text>
+            </View>
           </View>
         </View>
       </View>

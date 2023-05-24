@@ -25,7 +25,7 @@ export default function TabBottomRoutes({ navigation }) {
       initialRouteName={category}
       screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarStyle: { backgroundColor: '#FF6B00' },
+        tabBarStyle: { backgroundColor: '#093D73' },
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           let rn = route.name;

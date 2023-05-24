@@ -84,7 +84,7 @@ export default function ResetPassword({ navigation }) {
         <View style={{ padding: 30 }} />
         <CustomButton
           text="Confirmar"
-          backgroundColor="#FF6B00"
+          backgroundColor="#093D73"
           textColor="#FFFFFF"
           onPress={put}
         />

@@ -10,12 +10,11 @@ import { AuthContext } from '../../context/index';
 
 const MAX_TITLE_LENGTH = 22;
 
-const EditCard = ({ text, poster_path, author, video }) => {
+const EditCard = ({ text, poster_path, author, video, categoriaId }) => {
 
-  const categoriaId = video.categoria_videos.categoria_id;
   const { userToken } = useContext(AuthContext);
 
-  const imageUrl = useMemo(() => `http://144.22.215.111/uploads/${poster_path}`, [poster_path]);
+  const imageUrl = useMemo(() => `http://144.22.182.223/uploads/${poster_path}`, [poster_path]);
   const navigation = useNavigation();
   const truncatedTitle = useMemo(() => {
     if (text.length > MAX_TITLE_LENGTH) {

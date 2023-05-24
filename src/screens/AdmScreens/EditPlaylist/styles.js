@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     color: "#E6652E",
-    marginLeft: 30,
     marginBottom: 10,
     fontFamily: 'IstokWeb-Bold'
   },

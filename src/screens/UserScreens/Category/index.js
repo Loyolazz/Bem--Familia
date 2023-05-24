@@ -8,6 +8,7 @@ import {
   View,
   FlatList,
   ActivityIndicator,
+  Button
 } from 'react-native';
 import style from './style';
 import Logo from '../../../assets/logo.png';
@@ -21,6 +22,7 @@ import LinearGradient from 'react-native-linear-gradient';
 export default function Category({ navigation }) {
   const [isLoading, setIsLoading] = useState(true);
   const [listCategoria, setListCategoria] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
 
   const getCategoria = async () => {
     try {
@@ -32,6 +34,15 @@ export default function Category({ navigation }) {
       setTimeout(() => {
         setIsLoading(false);
       }, 2500);
+    }
+  };
+
+  const handleRefresh = async () => {
+    setRefreshing(true);
+    try {
+      await getCategoria();
+    } finally {
+      setRefreshing(false);
     }
   };
 
@@ -49,14 +60,19 @@ export default function Category({ navigation }) {
 
   return (
     <SafeAreaView style={style.container}>
-      <LinearGradient colors={['#dc462d', '#eb7c2d']} style={style.header}>
+      <LinearGradient colors={['#005B96', '#093D73']} style={style.header}>
         <Image style={style.image} source={Logo} resizeMode="contain" />
       </LinearGradient>
 
       <View style={style.contentTitle}>
         <Text style={style.title}>Categorias</Text>
+        <TouchableOpacity onPress={handleRefresh} disabled={refreshing}>
+        <Icon name={'refresh'} size={30} color={'#19191B'} />
+        </TouchableOpacity>
       </View>
       <FlatList
+        refreshing={refreshing}
+        onRefresh={handleRefresh}
         horizontal
         showsHorizontalScrollIndicator={false}
         data={DataCategory}
@@ -105,6 +121,7 @@ export default function Category({ navigation }) {
                     posterPath={dataVideos.file}
                     text={dataVideos.titulo}
                     loc={dataVideos.autor}
+                    avaliacao={dataVideos.avaliacaoAvg}
                   />
                 ))}
               </ScrollView>

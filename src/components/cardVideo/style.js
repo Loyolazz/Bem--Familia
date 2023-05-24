@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontFamily: 'IstokWeb-Bold',
         fontWeight: 'bold',
-        color: '#FF6B00',
+        color: '#093D73',
     },
     textTitle: {
         fontSize: 16,

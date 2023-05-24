@@ -16,7 +16,7 @@ import LinearGradient from 'react-native-linear-gradient';
 export default function InitialScreen({navigation}) {
   return (
     <SafeAreaView style={style.container}>
-      <LinearGradient colors={['#dc462d', '#eb7c2d']} style={style.header}>
+      <LinearGradient colors={['#005B96 ', '#093D73']} style={style.header}>
         <Image style={style.image} source={Logo} resizeMode="contain" />
       </LinearGradient>
       <View style={{top: '3%'}}>

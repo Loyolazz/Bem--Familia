@@ -13,7 +13,11 @@ const UploadImage = ({ onImageSelected }) => {
       mediaType: 'photo',
       includeBase64: false,
     };
-    launchImageLibrary(options, setPickerResponse);
+    launchImageLibrary(options, (response) => {
+      if (!response.didCancel && !response.errorCode) {
+        setPickerResponse(response);
+      }
+    });
   }, []);
 
   const uri = pickerResponse?.assets && pickerResponse.assets[0].uri;

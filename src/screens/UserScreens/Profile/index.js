@@ -18,10 +18,12 @@ import { ScrollView } from 'react-native-gesture-handler';
 export default function Profile({ navigation }) {
   const { logout, userInfo, userToken } = useContext(AuthContext);
   const [listFavorite, setListFavorite] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
+
 
   const getFavorite = async () => {
     try {
-      const response = await axios.get('http://144.22.215.111/favoritos', {
+      const response = await axios.get('http://144.22.182.223/favoritos', {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -38,11 +40,21 @@ export default function Profile({ navigation }) {
     getFavorite();
   }, []);
 
+  const handleRefresh = async () => {
+    setRefreshing(true);
+    try {
+      await getFavorite();
+    } finally {
+      setRefreshing(false);
+    }
+  };
+
+
   const handleLogout = () => {
     logout();
   };
 
-  const watchedVideos = listFavorite.filter(video => watchedVideos.includes(video.id));
+  /* const watchedVideos = listFavorite.filter(video => watchedVideos.includes(video.id)); */
 
   const handleViewAllFavorites = () => {
     navigation.navigate('Favorite');
@@ -56,7 +68,7 @@ export default function Profile({ navigation }) {
 
     <SafeAreaView style={style.container}>
       <ScrollView>
-        <LinearGradient colors={['#dc462d', '#eb7c2d']} style={style.header}>
+        <LinearGradient colors={['#005B96', '#093D73']} style={style.header}>
           <TouchableOpacity
             activeOpacity={1}
             style={style.contentlogout}
@@ -72,11 +84,11 @@ export default function Profile({ navigation }) {
             <Text style={style.greetingText}>Olá, {userInfo.usuario.nome}</Text>
             <Text style={style.greetingTextEmail}>E-mail: {userInfo.usuario.email}</Text>
             <View>
-              {/* <TouchableOpacity
+              <TouchableOpacity
                 onPress={() => navigation.navigate('ResetPassword')}
                 style={style.button}>
                 <Text style={style.resetPassword}>Alterar senha</Text>
-              </TouchableOpacity> */}
+              </TouchableOpacity>
             </View>
           </View>
 
@@ -87,9 +99,12 @@ export default function Profile({ navigation }) {
           </View>
         </LinearGradient>
         <View style={style.favoriteContainer}>
-          <View>
+
             <Text style={style.favoriteTitle}>Vídeos salvos: </Text>
-          </View>
+            <TouchableOpacity onPress={handleRefresh} disabled={refreshing} style={{marginLeft: 120}}>
+              <Icon name={'refresh'} size={30} color={'#19191B'} />
+            </TouchableOpacity>
+
         </View>
         {listFavorite.length === 0 ? (
           <View style={style.emptyFavoriteContainer}>
@@ -98,6 +113,8 @@ export default function Profile({ navigation }) {
         ) : (
           <View style={{ flex: 1 }}>
             <FlatList
+              refreshing={refreshing}
+              onRefresh={handleRefresh}
               data={listFavorite}
               numColumns={2}
               scrollEnabled={false}
@@ -109,6 +126,7 @@ export default function Profile({ navigation }) {
                   posterPath={item.file}
                   text={item.titulo}
                   loc={item.autor}
+                  avaliacao={item.avaliacaoAvg}
                 />
               )}
             />
@@ -117,7 +135,7 @@ export default function Profile({ navigation }) {
         <Text style={{ color: '#000000', fontSize: 20, marginLeft: 20, marginBottom: 25, marginTop: 10, fontFamily: 'IstokWeb-Bold' }}>
           Assistidos
         </Text>
-        <FlatList
+        {/*         <FlatList
           data={watchedVideos}
           numColumns={2}
           scrollEnabled={false}
@@ -131,7 +149,7 @@ export default function Profile({ navigation }) {
               loc={item.autor}
             />
           )}
-        />
+        /> */}
       </ScrollView>
     </SafeAreaView>
 

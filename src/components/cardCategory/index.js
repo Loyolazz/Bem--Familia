@@ -5,8 +5,8 @@ import styles from './styles';
 
 const MAX_TITLE_LENGTH = 22;
 
-const CardCategory = ({ text, posterPath, onPress, loc }) => {
-  const imageUrl = useMemo(() => `http://144.22.215.111/uploads/${posterPath}`, [posterPath]);
+const CardCategory = ({ text, posterPath, onPress, loc, avaliacao }) => {
+  const imageUrl = useMemo(() => `http://144.22.182.223/uploads/${posterPath}`, [posterPath]);
   const handlePress = useCallback(() => onPress(), [onPress]);
 
   const truncatedTitle = useMemo(() => {
@@ -19,25 +19,31 @@ const CardCategory = ({ text, posterPath, onPress, loc }) => {
   return (
     <View style={styles.container}>
       <View style={styles.cardContainer}>
-      <TouchableOpacity onPress={handlePress}>
-        <Image
-          style={styles.image}
-          source={{ uri: imageUrl }}
-        />
-        <Icon
-          name={'play-circle-outline'}
-          size={50}
-          color={'#000000'}
-          style={styles.playIcon}
-        />
-      </TouchableOpacity>
+        <TouchableOpacity onPress={handlePress}>
+          <Image
+            style={styles.image}
+            source={{ uri: imageUrl }}
+          />
+          <Icon
+            name={'play-circle-outline'}
+            size={50}
+            color={'#000000'}
+            style={styles.playIcon}
+          />
+          <View style={styles.avaliacao}>
+            <Icon name={'star'} size={20} color={'#FFBF00'} />
+            <Text style={styles.persona}>
+              {avaliacao}
+            </Text>
+          </View>
+        </TouchableOpacity>
       </View>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>
           {truncatedTitle}
         </Text>
         <View style={{ flexDirection: 'row', paddingBottom: 10, alignItems: 'center' }}>
-          <Icon name={'person-circle-outline'} size={25} color={'#111111'}/>
+          <Icon name={'person-circle-outline'} size={25} color={'#111111'} />
           <Text style={styles.persona}>
             {loc}
           </Text>

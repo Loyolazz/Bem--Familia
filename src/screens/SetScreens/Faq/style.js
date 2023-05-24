@@ -24,13 +24,13 @@ const style = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    color: "#E6652E",
+    color: "#093D73",
     marginLeft: 30,
     fontFamily: 'IstokWeb-Bold'
   },
   subtitle: {
     fontSize: 13,
-    color: "#E6652E",
+    color: "#093D73",
     marginLeft: 30,
     fontFamily: 'IstokWeb-Bold'
   },
@@ -56,7 +56,7 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     borderWidth: 1,
     borderRadius: 15,
-    borderColor: '#FF6B00',
+    borderColor: '#093D73',
     marginTop: 30,
   },
   ButtonText: {
@@ -77,7 +77,7 @@ const style = StyleSheet.create({
     height: 50,
     justifyContent: 'center',
     borderRadius: 15,
-    backgroundColor: '#FF6B00',
+    backgroundColor: '#093D73',
     marginTop: 10
   },
   contentAuthor: {
@@ -93,7 +93,7 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     borderWidth: 1,
     borderRadius: 15,
-    borderColor: '#FF6B00',
+    borderColor: '#093D73',
     marginTop: 10,
   },
   textAnswer: {

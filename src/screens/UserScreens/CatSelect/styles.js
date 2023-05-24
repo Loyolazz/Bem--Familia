@@ -12,7 +12,7 @@ const style = StyleSheet.create({
         alignItems: 'center',
         width: '100%',
         height: '10%',
-        backgroundColor: '#FF6B00',
+        backgroundColor: '#093D73',
         justifyContent: 'center',
         flexDirection: 'row',
         marginBottom: 20

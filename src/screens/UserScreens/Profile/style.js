@@ -17,7 +17,7 @@ const style = StyleSheet.create({
   greetingN: {
     textAlign: 'center',
     fontSize: 100,
-    color: '#FF6B00',
+    color: '#093D73',
     fontFamily: 'IstokWeb-Bold',
   },
   elipse: {
@@ -29,7 +29,7 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 5,
-    borderColor: '#FF6B00',
+    borderColor: '#093D73',
     top: 20,
   },
   contentCircle: {
@@ -62,7 +62,8 @@ const style = StyleSheet.create({
   favoriteContainer: {
     height: 120,
     width: '100%',
-    justifyContent: 'flex-end',
+    flexDirection: 'row',
+    alignItems: 'flex-end'
 
   },
   favoriteTitle: {
