@@ -21,10 +21,10 @@ const styles = StyleSheet.create({
     paddingRight: 155,
   },
   sectionHeaderText: {
-    fontSize: 20,
+    fontSize: 19,
     color: '#979797',
     opacity: 50,
-    fontFamily: 'IstokWeb',
+    fontFamily: 'IstokWeb-Bold',
     fontWeight: 'bold',
     lineHeight: 28.79
   },

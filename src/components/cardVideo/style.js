@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     },
     newCardTextAuthor: {
         fontSize: 12,
-        fontFamily: 'IstokWeb',
+        fontFamily: 'IstokWeb-Bold',
         fontWeight: 'bold',
         color: '#111111',
         lineHeight: 24,
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     },
     noteText: {
         fontSize: 12,
-        fontFamily: 'IstokWeb',
+        fontFamily: 'IstokWeb-Bold',
         fontWeight: 'bold',
         color: '#111111',
     },

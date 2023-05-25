@@ -60,11 +60,10 @@ const style = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   favoriteContainer: {
-    height: 120,
+    height: 70,
     width: '100%',
     flexDirection: 'row',
     alignItems: 'flex-end'
-
   },
   favoriteTitle: {
     color: '#000000',
@@ -122,7 +121,7 @@ const style = StyleSheet.create({
   },
   header: {
     width: '100%',
-    height: 310,
+    height: 360,
     paddingHorizontal: 20,
     paddingVertical: 20,
     alignItems: 'center',
