@@ -53,7 +53,8 @@ const style = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 15,
     fontFamily: 'IstokWeb-Bold',
-    marginRight: 10
+    marginRight: 10,
+    top: 2,
   },
   contentProfile: {
     width: '100%',

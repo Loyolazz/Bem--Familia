@@ -16,14 +16,7 @@ const PlayerVideo = ({ navigation, route }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [fullscreen, setFullscreen] = useState(false);
   const webViewRef = useRef(null);
-  const [watchedVideos, setWatchedVideos] = useState([]);
-  const injected = `
-  const video = document.querySelector('video');
-  video.addEventListener('ended', function() {
-    window.ReactNativeWebView.postMessage('videoEnded');
-  });
-  ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "msfullscreenchange"].forEach( eventType => document.addEventListener(eventType, function(e){ window.ReactNativeWebView.postMessage(e) }, false) ); true;
-`;
+  const injected = ` ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "msfullscreenchange"].forEach( eventType => document.addEventListener(eventType, function(e){ window.ReactNativeWebView.postMessage(e) }, false) ); true;`;
 
 
   const shuffle = useCallback((array) => {
@@ -44,18 +37,6 @@ const PlayerVideo = ({ navigation, route }) => {
   const sortedVideos = useMemo(() => [...listVideo].sort((a, b) => b.avaliacaoAvg - a.avaliacaoAvg).slice(0, 5), [listVideo]);
 
   const recomendVideos = useMemo(() => shuffle([...sortedVideos]), [sortedVideos]);
-
-  const handleWebViewMessage = event => {
-    const message = event.nativeEvent.data;
-    if (message === 'fullscreenchange') {
-      setFullscreen(!fullscreen);
-      fullscreen ? Orientation.lockToPortrait() : Orientation.lockToLandscape();
-    } else if (message === 'videoEnded') {
-      const videoId = route.params.video.id;
-      setWatchedVideos([...watchedVideos, videoId]);
-    }
-  };
-  
 
   const getVideo = useCallback(async () => {
     try {
@@ -100,12 +81,21 @@ const PlayerVideo = ({ navigation, route }) => {
       <View style={styles.viewVideo}>
         {isLoading && <Loading />}
         <WebView
+          onMessage={() => {
+            if (Orientation.lockToLandscape()) {
+              setTimeout(function () {
+                ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
+              }, 200);
+              Orientation.lockToLandscape();
+            } else {
+              Orientation.lockToPortrait();
+            }
+          }}
           style={{ opacity: 0.99 }}
           ref={webViewRef}
           mixedContentMode={'compatibility'}
           javaScriptEnabled={true}
           injectedJavaScript={injected}
-          onMessage={handleWebViewMessage}
           renderLoading={() => <Loading />}
           onLoadStart={() => setIsLoading(true)}
           onLoad={() => setIsLoading(false)}

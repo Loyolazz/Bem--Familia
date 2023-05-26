@@ -65,7 +65,7 @@ export default function Profile({ navigation }) {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <StatusBar barStyle='dark-content' backgroundColor={"#005B96"}/>
       <SafeAreaView style={style.container}>
-        <ScrollView>
+        <ScrollView showsHorizontalScrollIndicator={false}>
           
           <LinearGradient colors={['#005B96', '#093D73']} style={style.header}>
             <TouchableOpacity activeOpacity={1} style={style.contentlogout}>

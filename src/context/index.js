@@ -44,15 +44,8 @@ export const AuthProvider = ({ children }) => {
                 login,
                 senha,
             });
-            console.log(response.data);
 
-            const authResponse = await axios.post(`http://144.22.182.223/auth`, {
-                login,
-                senha,
-            });
-            console.log(authResponse.data);
-
-            const userInfo = authResponse.data;
+            const userInfo = response.data;
             setUserInfo(userInfo);
             setUserToken(userInfo.token);
 
