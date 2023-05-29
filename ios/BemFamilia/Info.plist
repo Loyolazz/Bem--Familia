@@ -37,6 +37,12 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string	string>Read & Write Access to Photos</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera Access</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Video & Audio Recording</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>fonts/IstokWeb-Bold.ttf</string>

@@ -79,21 +79,10 @@ const PlayerVideo = ({ navigation, route }) => {
   return (
     <SafeAreaView style={styles.mainPlayerView}>
       <View style={styles.viewVideo}>
-        {isLoading && <Loading />}
         <WebView
-          style={{ opacity: 0.99 }}
-          domStorageEnabled={true}
-          ref={webViewRef}
-          mixedContentMode={'compatibility'}
-          javaScriptEnabled={true}
-          injectedJavaScript={injected}
-          renderLoading={() => <Loading />}
-          onLoadStart={() => setIsLoading(true)}
-          onLoad={() => setIsLoading(false)}
-          source={{ uri: 'https://fast.player.liquidplatform.com/pApiv2/embed/295d55bd4f62893d9fe4b6beb64318c5/260b8e8a148f9b765575f71f1dc590ef' }}
-          allowUniversalAccessFromFileURLs={true}
-          allowsProtectedMedia={false}
-          mediaCapturePermissionGrantType="grantIfSameHostElsePrompt"
+           allowsInlineMediaPlayback={ true }
+            mediaPlaybackRequiresUserAction={ false }
+          source={{ uri: postData.link }}
         />
       </View>
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', marginTop: 10 }}>
