@@ -92,6 +92,7 @@ const PlayerVideo = ({ navigation, route }) => {
             }
           }}
           style={{ opacity: 0.99 }}
+          domStorageEnabled={true}
           ref={webViewRef}
           mixedContentMode={'compatibility'}
           javaScriptEnabled={true}
