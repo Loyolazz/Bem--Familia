@@ -81,16 +81,6 @@ const PlayerVideo = ({ navigation, route }) => {
       <View style={styles.viewVideo}>
         {isLoading && <Loading />}
         <WebView
-          onMessage={() => {
-            if (Orientation.lockToLandscape()) {
-              setTimeout(function () {
-                ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
-              }, 200);
-              Orientation.lockToLandscape();
-            } else {
-              Orientation.lockToPortrait();
-            }
-          }}
           style={{ opacity: 0.99 }}
           domStorageEnabled={true}
           ref={webViewRef}
@@ -100,8 +90,10 @@ const PlayerVideo = ({ navigation, route }) => {
           renderLoading={() => <Loading />}
           onLoadStart={() => setIsLoading(true)}
           onLoad={() => setIsLoading(false)}
-          source={{ uri: postData.link }}
+          source={{ uri: 'https://fast.player.liquidplatform.com/pApiv2/embed/295d55bd4f62893d9fe4b6beb64318c5/260b8e8a148f9b765575f71f1dc590ef' }}
           allowUniversalAccessFromFileURLs={true}
+          allowsProtectedMedia={false}
+          mediaCapturePermissionGrantType="grantIfSameHostElsePrompt"
         />
       </View>
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', marginTop: 10 }}>
