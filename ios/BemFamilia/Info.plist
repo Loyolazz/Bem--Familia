@@ -35,14 +35,14 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string	string>Read & Write Access to Photos</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Camera Access</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Video & Audio Recording</string>
+	<string>Video &amp; Audio Recording</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Read &amp; Write Access to Photos</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>fonts/IstokWeb-Bold.ttf</string>
@@ -66,7 +66,7 @@
 		<string>fonts/Zocial.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string></string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

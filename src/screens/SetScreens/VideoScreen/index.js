@@ -55,7 +55,7 @@ const PlayerVideo = ({ navigation, route }) => {
     navigation.navigate('TabBot');
     return true;
   }
-  
+
   useEffect(() => {
     BackHandler.addEventListener("hardwareBackPress", handleBackButtonClick);
     return () => {
@@ -79,10 +79,24 @@ const PlayerVideo = ({ navigation, route }) => {
   return (
     <SafeAreaView style={styles.mainPlayerView}>
       <View style={styles.viewVideo}>
+      {isLoading && <Loading />}
         <WebView
-           allowsInlineMediaPlayback={ true }
-            mediaPlaybackRequiresUserAction={ false }
+          allowsInlineMediaPlayback={true}
+          mediaPlaybackRequiresUserAction={false}
           source={{ uri: postData.link }}
+          style={{ opacity: 0.99 }}
+          domStorageEnabled={false}
+          ref={webViewRef}
+          javaScriptEnabled={true}
+          injectedJavaScript={injected}
+          renderLoading={() => <Loading />}
+          onLoadStart={() => setIsLoading(true)}
+          onLoad={() => setIsLoading(false)}
+          allowUniversalAccessFromFileURLs={true}
+          useWebKit={true}
+          cacheEnabled={true}
+          geolocationEnabled={false}
+          allowsProtectedMedia={true}
         />
       </View>
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', marginTop: 10 }}>
