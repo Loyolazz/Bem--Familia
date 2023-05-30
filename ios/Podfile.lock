@@ -303,7 +303,7 @@ PODS:
   - React-jsinspector (0.71.1)
   - React-logger (0.71.1):
     - glog
-  - react-native-image-picker (5.3.1):
+  - react-native-image-picker (5.4.0):
     - React-Core
   - react-native-netinfo (9.3.10):
     - React-Core
@@ -315,12 +315,7 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
-  - react-native-video (5.2.1):
-    - React-Core
-    - react-native-video/Video (= 5.2.1)
-  - react-native-video/Video (5.2.1):
-    - React-Core
-  - react-native-webview (11.26.1):
+  - react-native-webview (12.1.0):
     - React-Core
   - React-perflogger (0.71.1)
   - React-RCTActionSheet (0.71.1):
@@ -471,7 +466,6 @@ DEPENDENCIES:
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-orientation-locker (from `../node_modules/react-native-orientation-locker`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
-  - react-native-video (from `../node_modules/react-native-video`)
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -565,8 +559,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-orientation-locker"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
-  react-native-video:
-    :path: "../node_modules/react-native-video"
   react-native-webview:
     :path: "../node_modules/react-native-webview"
   React-perflogger:
@@ -645,12 +637,11 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 60cf272aababc5212410e4249d17cea14fc36caa
   React-jsinspector: ff56004b0c974b688a6548c156d5830ad751ae07
   React-logger: 60a0b5f8bed667ecf9e24fecca1f30d125de6d75
-  react-native-image-picker: ec9b713e248760bfa0f879f0715391de4651a7cb
+  react-native-image-picker: 709d04e7df67bd3a90f376c3eedb2e8b8334dd04
   react-native-netinfo: ccbe1085dffd16592791d550189772e13bf479e2
   react-native-orientation-locker: 851f6510d8046ea2f14aa169b1e01fcd309a94ba
   react-native-safe-area-context: b8979f5eda6ed5903d4dbc885be3846ea3daa753
-  react-native-video: c26780b224543c62d5e1b2a7244a5cd1b50e8253
-  react-native-webview: 9f111dfbcfc826084d6c507f569e5e03342ee1c1
+  react-native-webview: 13db17f7c7fe8f91c826e9afcc369cbc74507ea0
   React-perflogger: ec8eef2a8f03ecfa6361c2c5fb9197ef4a29cc85
   React-RCTActionSheet: a0c023b86cf4c862fa9c4eb0f6f91fbe878fb2de
   React-RCTAnimation: 168d53718c74153947c0109f55900faa64d79439
@@ -673,6 +664,6 @@ SPEC CHECKSUMS:
   Yoga: 921eb014669cf9c718ada68b08d362517d564e0c
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: a0fc0e1cb2960af9bdda1ef278fd4500a83dded7
+PODFILE CHECKSUM: 1eced76cab3624fc291d16fc1ad62212fe8a38cc
 
 COCOAPODS: 1.12.1

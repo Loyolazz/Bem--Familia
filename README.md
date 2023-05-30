@@ -9,6 +9,7 @@ Certifique-se de ter instalado o seguinte em seu sistema:
 - Node.js: https://nodejs.org
 - React Native CLI: Execute o comando `npm install -g react-native-cli` para instalar o React Native CLI globalmente.
 - Ruby: ruby '>= 2.6.10' - https://www.ruby-lang.org/en/news/2022/04/12/ruby-2-6-10-released/
+- Yarn 
 
 ## Configuração do Projeto
 
@@ -18,7 +19,7 @@ Siga as etapas abaixo para configurar o projeto em sua máquina:
 
 1. Abra um terminal e navegue até o diretório raiz do projeto.
 
-2. Execute o comando `npm install --force` para instalar as dependências do projeto.
+2. Execute o comando `yarn install --force` para instalar as dependências do projeto.
 
 3. Execute o comando `npx react-native run-android` para iniciar o aplicativo no dispositivo ou emulador Android.
 
@@ -30,7 +31,7 @@ Para executar o projeto no iOS, siga as etapas abaixo:
 
 2. Execute o comando `bundle install` para instalar as dependências do Ruby.
 
-3. Execute o comando `npm install --force` para instalar as dependências do projeto.
+3. Execute o comando `yarn install` para instalar as dependências do projeto.
 
 4. Navegue até o diretório `ios` usando o terminal.
 
