@@ -11,8 +11,6 @@ import { AuthContext } from '../../context';
 import { deleteCategorys, getCategorias } from '../../services/api';
 import { useNavigation } from '@react-navigation/native';
 
-
-
 export default function CategoryModal(props) {
     const { modalVisible, setModalVisible, option } = props;
     const [selectedCategory, setSelectedCategory] = useState(null);
@@ -205,7 +203,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
     },
     dropdownItem: {
-        color: '#FFFFFF',
+        color: 'red',
         fontSize: 16,
         fontFamily: 'IstokWeb-Bold'
     },

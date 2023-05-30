@@ -129,6 +129,7 @@ export default function Category({ navigation }) {
                     text={dataVideos.titulo}
                     loc={dataVideos.autor}
                     avaliacao={dataVideos.avaliacaoAvg}
+                    showRating={true}
                   />
                 ))}
               </ScrollView>

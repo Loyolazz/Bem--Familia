@@ -5,7 +5,7 @@ import styles from './styles';
 
 const MAX_TITLE_LENGTH = 22;
 
-const CardCategory = ({ text, posterPath, onPress, loc, avaliacao }) => {
+const CardCategory = ({ text, posterPath, onPress, loc, avaliacao, showRating }) => {
   const imageUrl = useMemo(() => `http://144.22.182.223/uploads/${posterPath}`, [posterPath]);
   const handlePress = useCallback(() => onPress(), [onPress]);
 
@@ -30,12 +30,14 @@ const CardCategory = ({ text, posterPath, onPress, loc, avaliacao }) => {
             color={'#000000'}
             style={styles.playIcon}
           />
-          <View style={styles.avaliacao}>
-            <Icon name={'star'} size={20} color={'#FFBF00'} />
-            <Text style={styles.persona}>
-              {avaliacao}
-            </Text>
-          </View>
+          {showRating && (
+            <View style={styles.avaliacao}>
+              <Icon name={'star'} size={20} color={'#FFBF00'} />
+              <Text style={styles.persona}>
+                {avaliacao}
+              </Text>
+            </View>
+          )}
         </TouchableOpacity>
       </View>
       <View style={styles.titleContainer}>
