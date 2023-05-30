@@ -8,7 +8,7 @@ import Modal from '../../../components/modalRating';
 import FavoriteButton from '../../../components/favorite';
 import WebView from 'react-native-webview';
 import Orientation from 'react-native-orientation-locker';
-
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const PlayerVideo = ({ navigation, route }) => {
   const [postData, setPostData] = useState(route.params.data);
@@ -78,73 +78,75 @@ const PlayerVideo = ({ navigation, route }) => {
 
   return (
     <SafeAreaView style={styles.mainPlayerView}>
-      <View style={styles.viewVideo}>
-      {isLoading && <Loading />}
-        <WebView
-          allowsInlineMediaPlayback={true}
-          mediaPlaybackRequiresUserAction={false}
-          source={{ uri: postData.link }}
-          style={{ opacity: 0.99 }}
-          domStorageEnabled={false}
-          ref={webViewRef}
-          javaScriptEnabled={true}
-          injectedJavaScript={injected}
-          renderLoading={() => <Loading />}
-          onLoadStart={() => setIsLoading(true)}
-          onLoad={() => setIsLoading(false)}
-          allowUniversalAccessFromFileURLs={true}
-          useWebKit={true}
-          cacheEnabled={true}
-          geolocationEnabled={false}
-          allowsProtectedMedia={true}
-        />
-      </View>
-      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', marginTop: 10 }}>
-        <Text style={styles.postTitle}>
-          {postData.titulo}
-        </Text>
-        <FavoriteButton id={postData.id} />
-      </View>
-      <View style={{ flexDirection: 'row' }}>
-        <Text style={styles.postName}>{postData.autor}</Text>
-      </View>
-      <View style={{ alignItems: 'center' }}>
-        <View style={styles.contentAvaliar}>
-          <Modal id={postData.id} />
-          <View style={{ flexDirection: 'row', width: 60 }}>
-            <Icon name={'star'} size={15} color={'#FFA500'} />
-            <Text style={styles.postTypeTwo}>
-              {postData.avaliacaoAvg}
-            </Text>
+      <GestureHandlerRootView>
+        <View style={styles.viewVideo}>
+          {isLoading && <Loading />}
+          <WebView
+            allowsInlineMediaPlayback={true}
+            mediaPlaybackRequiresUserAction={false}
+            source={{ uri: postData.link }}
+            //source={{ uri: 'https://www.youtube.com/watch?v=V5M2WZiAy6k'}}
+            style={{ opacity: 0.99 }}
+            domStorageEnabled={false}
+            ref={webViewRef}
+            javaScriptEnabled={true}
+            injectedJavaScript={injected}
+            renderLoading={() => <Loading />}
+            onLoadStart={() => setIsLoading(true)}
+            onLoad={() => setIsLoading(false)}
+            allowUniversalAccessFromFileURLs={true}
+            useWebKit={true}
+            cacheEnabled={true}
+            allowsProtectedMedia={true}
+          />
+        </View>
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', marginTop: 10 }}>
+          <Text style={styles.postTitle}>
+            {postData.titulo}
+          </Text>
+          <FavoriteButton id={postData.id} />
+        </View>
+        <View style={{ flexDirection: 'row' }}>
+          <Text style={styles.postName}>{postData.autor}</Text>
+        </View>
+        <View style={{ alignItems: 'center' }}>
+          <View style={styles.contentAvaliar}>
+            <Modal id={postData.id} />
+            <View style={{ flexDirection: 'row', width: 60 }}>
+              <Icon name={'star'} size={15} color={'#FFA500'} />
+              <Text style={styles.postTypeTwo}>
+                {postData.avaliacaoAvg}
+              </Text>
+            </View>
           </View>
         </View>
-      </View>
-      <Text style={{ color: '#000000', fontSize: 20, marginLeft: 20, marginBottom: 25, marginTop: 10, fontFamily: 'IstokWeb-Bold' }}>
-        Recomendados
-      </Text>
-      <View style={{ alignItems: 'center' }}>
-        <FlatList
-          data={recomendVideos}
-          keyExtractor={(item, index) => `${index}`}
-          onEndReachedThreshold={0.1}
-          ListFooterComponent={renderFooter}
-          windowSize={5}
-          renderItem={({ item }) => {
-            return (
-              <CardVideo
-                onPress={() => {
-                  navigation.push('Video', { data: item });
-                }}
-                posterPath={item.file}
-                text={item.titulo}
-                loc={item.autor}
-                avaliacao={item.avaliacaoAvg}
-                isSearchCard={true}
-              />
-            )
-          }}
-        />
-      </View>
+        <Text style={{ color: '#000000', fontSize: 20, marginLeft: 20, marginBottom: 25, marginTop: 10, fontFamily: 'IstokWeb-Bold' }}>
+          Recomendados
+        </Text>
+        <View style={{ alignItems: 'center' }}>
+          <FlatList
+            data={recomendVideos}
+            keyExtractor={(item, index) => `${index}`}
+            onEndReachedThreshold={0.1}
+            ListFooterComponent={renderFooter}
+            windowSize={5}
+            renderItem={({ item }) => {
+              return (
+                <CardVideo
+                  onPress={() => {
+                    navigation.push('Video', { data: item });
+                  }}
+                  posterPath={item.file}
+                  text={item.titulo}
+                  loc={item.autor}
+                  avaliacao={item.avaliacaoAvg}
+                  isSearchCard={true}
+                />
+              )
+            }}
+          />
+        </View>
+      </GestureHandlerRootView>
     </SafeAreaView>
   );
 };
