@@ -19,21 +19,21 @@ import toastConfig from './toast/index';
 import SplashLoading from '../../../components/loadingSplash'
 
 export default function Registration({navigation}) {
-  const [user, setUser] = useState('');
+  const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [login, setLogin] = useState('');
-  const [pass, setPass] = useState('');
+  const [senha, setSenha] = useState('');
   const [modalLoading, setModalLoading] = useState(false);
-  const userInput = useRef(null);
-  const passInput = useRef(null);
+  const nomeInput = useRef(null);
+  const senhaInput = useRef(null);
   const loginInput = useRef(null);
   const emailInput = useRef(null);
 
   const {register} = useContext(AuthContext);
 
   function validateForm() {
-    if (!user) {
-      userInput.current.focusOnError();
+    if (!nome) {
+      nomeInput.current.focusOnError();
       return false;
     }
     if (!email) {
@@ -44,8 +44,8 @@ export default function Registration({navigation}) {
       loginInput.current.focusOnError();
       return false;
     }
-    if (!pass) {
-      passInput.current.focusOnError();
+    if (!senha) {
+      senhaInput.current.focusOnError();
       return false;
     }
     return true;
@@ -60,12 +60,12 @@ export default function Registration({navigation}) {
           <Text style={style.text3}>#Inscreva-se para começar</Text>
           <Inputs
             style={style.input}
-            ref={userInput}
+            ref={nomeInput}
             placeholder="Nome completo"
             autoCapitalize="none"
             autoCorrect={false}
-            value={user}
-            onChangeText={text => setUser(text)}
+            value={nome}
+            onChangeText={text => setNome(text)}
           />
           <View style={{padding: 10}} />
           <Inputs
@@ -90,20 +90,20 @@ export default function Registration({navigation}) {
           <View style={{padding: 10}} />
           <Inputs
             style={style.input}
-            ref={passInput}
+            ref={senhaInput}
             placeholder="Senha"
-            value={pass}
+            value={senha}
             autoCapitalize="none"
             autoCorrect={false}
             secureTextEntry
-            onChangeText={text => setPass(text)}
+            onChangeText={text => setSenha(text)}
           />
           <View style={{paddingTop: 25, paddingBottom: 20}}>
             <TouchableOpacity
               style={style.button}
               onPress={() => {
                 if (validateForm()) {
-                  register(user, email, login, pass, setModalLoading);
+                  register(nome, email, login, senha, setModalLoading, navigation);
                 }
               }}>
               <Text style={style.textButton}>Cadastrar</Text>

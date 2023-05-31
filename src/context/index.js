@@ -15,27 +15,29 @@ export const AuthProvider = ({ children }) => {
     const showErrorToast = (error) => {
         let message = "An error occurred";
         if (error.response) {
-            if (error.response.data.error) {
-                message = error.response.data.error;
-            } else if (error.response.data.errors) {
-                message = error.response.data.errors.join("\n");
-            }
+          if (error.response.status === 409) {
+            message = "Registration conflict: This user already exists.";
+          } else if (error.response.data.error) {
+            message = error.response.data.error;
+          } else if (error.response.data.errors) {
+            message = error.response.data.errors.join("\n");
+          }
         }
         Toast.show({
-            topOffset: 50,
-            type: "error",
-            text1: 'Error',
-            text2: message,
-            props: {
-                text2NumberOfLines: 6,
-                style1: {
-                    height: 230,
-                }
+          topOffset: 50,
+          type: "error",
+          text1: 'Error',
+          text2: message,
+          props: {
+            text2NumberOfLines: 6,
+            style1: {
+              height: 230,
             }
+          }
         });
-    };
+      };
 
-    const register = async (nome, email, login, senha, setModalLoading) => {
+    const register = async (nome, email, login, senha, setModalLoading, navigation) => {
         setModalLoading(true);
         try {
             const response = await axios.post(`http://144.22.182.223/cadastro`, {
@@ -46,22 +48,19 @@ export const AuthProvider = ({ children }) => {
             });
 
             const userInfo = response.data;
-            setUserInfo(userInfo);
-            setUserToken(userInfo.token);
 
-            AsyncStorage.setItem('userInfo', JSON.stringify(userInfo));
-            AsyncStorage.setItem('userToken', userInfo.token);
+            alert('Usuário criado com sucesso!');
 
-            console.log('User Token: ' + userInfo.token);
-            console.log('User Nome: ' + userInfo.usuario.nome);
+            navigation.navigate('Login');
 
         } catch (error) {
-            setTimeout(() => setModalLoading(false), 1000);
             showErrorToast(error);
-
-        }
-        setTimeout(() => setModalLoading(false), 1000);
+            console.log(`Register error: ${error}`);
+          } finally {
+            setModalLoading(false);
+          }
     };
+
 
     const login = async (login, senha, setModalLoading) => {
         setModalLoading(true);
@@ -76,8 +75,12 @@ export const AuthProvider = ({ children }) => {
             setUserInfo(userInfo);
             setUserToken(userInfo.token);
 
-            AsyncStorage.setItem('userInfo', JSON.stringify(userInfo));
-            AsyncStorage.setItem('userToken', userInfo.token);
+            if (userInfo) {
+                AsyncStorage.setItem('userInfo', JSON.stringify(userInfo));
+            }
+            if (userInfo && userInfo.token) {
+                AsyncStorage.setItem('userToken', userInfo.token);
+            }
 
             console.log('User Token: ' + userInfo.token);
             console.log('User Nome: ' + userInfo.usuario.nome);
@@ -130,5 +133,6 @@ export const AuthProvider = ({ children }) => {
         <AuthContext.Provider value={{ register, login, logout, isLoading, userToken, userInfo, isAdmin }}>
             {children}
         </AuthContext.Provider>
+
     )
 }

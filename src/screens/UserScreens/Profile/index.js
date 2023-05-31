@@ -75,7 +75,6 @@ export default function Profile({ navigation }) {
               <Icon name={'log-out-outline'} size={25} color={'#FFFFFF'} />
             </TouchableOpacity>
             <View style={style.contentProfile}>
-              <Text style={style.greetingText}>Olá, {userInfo.usuario.nome}</Text>
               <Text style={style.greetingTextEmail}>
                 E-mail: {userInfo.usuario.email}
               </Text>

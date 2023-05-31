@@ -9,6 +9,7 @@ import FavoriteButton from '../../../components/favorite';
 import WebView from 'react-native-webview';
 import Orientation from 'react-native-orientation-locker';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native';
 
 const PlayerVideo = ({ navigation, route }) => {
   const [postData, setPostData] = useState(route.params.data);
@@ -16,8 +17,7 @@ const PlayerVideo = ({ navigation, route }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [fullscreen, setFullscreen] = useState(false);
   const webViewRef = useRef(null);
-  const injected = ` ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "msfullscreenchange"].forEach( eventType => document.addEventListener(eventType, function(e){ window.ReactNativeWebView.postMessage(e) }, false) ); true;`;
-
+  const injected = `["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "msfullscreenchange"].forEach( eventType => document.addEventListener(eventType, function(e){ window.ReactNativeWebView.postMessage(e) }, false) ); true;`;
 
   const shuffle = useCallback((array) => {
     let currentIndex = array.length;
@@ -85,7 +85,6 @@ const PlayerVideo = ({ navigation, route }) => {
             allowsInlineMediaPlayback={true}
             mediaPlaybackRequiresUserAction={false}
             source={{ uri: postData.link }}
-            //source={{ uri: 'https://www.youtube.com/watch?v=V5M2WZiAy6k'}}
             style={{ opacity: 0.99 }}
             domStorageEnabled={false}
             ref={webViewRef}
@@ -98,6 +97,8 @@ const PlayerVideo = ({ navigation, route }) => {
             useWebKit={true}
             cacheEnabled={true}
             allowsProtectedMedia={true}
+            allowsFullscreenVideo={true}
+            onMessage={(event) => {fullscreen ? Orientation.lockToPortrait() : Orientation.lockToLandscapeLeft(); setFullscreen(!fullscreen)}}
           />
         </View>
         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around', marginTop: 10 }}>
@@ -123,6 +124,7 @@ const PlayerVideo = ({ navigation, route }) => {
         <Text style={{ color: '#000000', fontSize: 20, marginLeft: 20, marginBottom: 25, marginTop: 10, fontFamily: 'IstokWeb-Bold' }}>
           Recomendados
         </Text>
+        <ScrollView>
         <View style={{ alignItems: 'center' }}>
           <FlatList
             data={recomendVideos}
@@ -146,6 +148,7 @@ const PlayerVideo = ({ navigation, route }) => {
             }}
           />
         </View>
+        </ScrollView>
       </GestureHandlerRootView>
     </SafeAreaView>
   );

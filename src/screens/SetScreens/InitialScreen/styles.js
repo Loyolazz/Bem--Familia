@@ -68,6 +68,8 @@ const style = StyleSheet.create({
   textButton2: {
     color: '#000000',
     fontWeight: 'bold',
+    fontFamily: 'IstokWeb-Bold',
+    height: 20
   },
   text: {
     color: '#AFB1B6',

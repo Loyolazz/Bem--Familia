@@ -24,7 +24,7 @@ export default function AdmTabBottomRoutes({ navigation }) {
       initialRouteName={ROUTE_NAMES.category}
       screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarStyle: { backgroundColor: '#FF6B00' },
+        tabBarStyle: { backgroundColor: '#093D73' },
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           switch (route.name) {
